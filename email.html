@@ -132,7 +132,7 @@ button {
  <label for="subject">Submission Code</label>
     <textarea id="subject" name="subject" placeholder="Program Code.." style="height:200px"></textarea>
     
- <button id="submit-btn">Submit</button>
+ <button id="submit-btn" type="submit">Submit</button>
 
   <!-- Popup modal -->
   <div class="popup" id="popup">
@@ -151,13 +151,15 @@ const popup = document.getElementById('popup');
 const closeBtn = document.getElementById('close-btn');
 
 // Show the popup when the submit button is clicked
-submitBtn.addEventListener('click', () => {
+submitBtn.addEventListener('click', (event) => {
+    event.preventDefault();
   popup.style.display = 'flex'; // Show the popup
 });
 
 // Hide the popup when the close button is clicked
 closeBtn.addEventListener('click', () => {
   popup.style.display = 'none'; // Hide the popup
+    window.location.reload(); // reloads the page
 });
 
 </script>
